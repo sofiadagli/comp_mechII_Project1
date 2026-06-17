@@ -11,8 +11,7 @@
     </Material>
   </Materials>
   
-  
-  
+
   <Geometry>
     <!-- 5 nodes forming a square, split into 3 triangles -->
     <Nodes>
@@ -32,12 +31,11 @@
   </Geometry>
   
   
-  
   <BoundaryConditions>
     <Boundary>
       <!-- Fixed temperature at upper edge -->
-      <temperature node="4" value="100.0"/>
-      <temperature node="5" value="100.0"/>
+      <temperature node="4" value="180.0"/>
+      <temperature node="5" value="180.0"/>
     </Boundary>
     
   <!-- edge-based heat flux (Neumann BC) -->
@@ -50,12 +48,10 @@
   <!-- convection boundary (Robin BC) -->
   <Convection>
     <conv elem="1" edge="2" h="50.0" Tinf="25.0"/>
-    <conv elem="3" edge="3" h="50.0" Tinf="25.0"/>
+    <conv elem="3" edge="2" h="50.0" Tinf="25.0"/>
   </Convection>
   
   </BoundaryConditions>
-  
-  
   
   
   <Step name="step1" type="steady-state">
